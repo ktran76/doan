@@ -1,6 +1,7 @@
 package controllers;
 
 import dto.UserDto;
+import entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,9 +27,9 @@ public class HomeController {
 
     @RequestMapping("/")
     public String hello(@RequestParam(required = false) String username, Model model){
-        List<UserDto> userDtos = userService.getAllUser();
-        for (UserDto userDto: userDtos) {
-            log.info(userDto.getUsername());
+        List<User> users = userService.getAllUser();
+        for (User user: users) {
+            System.out.println(user.getUsername());
         }
         return "index";
     }

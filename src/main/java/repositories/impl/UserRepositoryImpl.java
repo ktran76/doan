@@ -33,15 +33,11 @@ public class UserRepositoryImpl implements UserRepository {
     DataSource dataSource;
 
     @Override
-    public List<UserDto> getAllUser(){
-        List<UserDto> userDtos = new ArrayList<>();
+    public List<User> getAllUser(){
         Session s = Objects.requireNonNull(this.sessionFactory.getObject()).getCurrentSession();
         Query q = s.createQuery("From User");
         List<User> result = q.getResultList();
-        for (User u: result) {
-            UserDto userDto = UserMapper.MAPPER.toDto(u);
-            userDtos.add(userDto);
-        }
-        return userDtos;
+
+        return result;
     }
 }
