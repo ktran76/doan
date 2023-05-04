@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="JpaBuddyIdeaProjectConfig" ddlActionDbType="mysql">
+  <component name="JpaBuddyIdeaProjectConfig" ddlActionDbType="mysql" newRepositoryParent="org.springframework.data.jpa.repository.JpaRepository">
     <option name="defaultUnitInitialized" value="true" />
     <option name="renamerInitialized" value="true" />
-    <option name="reverseEngineeringLastDbConnectionId" value="83c47c62-88cb-4d68-99d0-6d640469af20" />
+    <option name="reverseEngineeringLastDbConnectionId" value="c4c8bb37-4bed-4373-95a1-81a42abed25a" />
     <option name="reLastEntityCreationPackage" value="src/main/java/entity" />
   </component>
 </project>

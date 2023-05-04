@@ -1,0 +1,27 @@
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+    <!-- ===================== Layout base ========================= -->
+
+    <definition name="baseLayout" template="/WEB-INF/layout/base.jsp">
+        <put-attribute name="title" value="Demo"/>
+        <put-attribute name="header" value="/WEB-INF/layout/header.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp"/>
+    </definition>
+
+    <!-- ===================== Layout client ========================= -->
+
+    <definition name="login" extends="baseLayout">
+        <put-attribute name="title" value="Đăng nhập"/>
+        <put-attribute name="auth" value="/WEB-INF/views/login.jsp"/>
+    </definition>
+
+    <definition name="register" extends="baseLayout">
+        <put-attribute name="title" value="Đăng ký"/>
+        <put-attribute name="auth" value="/WEB-INF/views/register.jsp"/>
+    </definition>
+
+</tiles-definitions>

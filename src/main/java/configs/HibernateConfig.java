@@ -28,6 +28,7 @@ public class HibernateConfig {
         factory.setPackagesToScan("entity");
         factory.setDataSource(dataSource());
         factory.setHibernateProperties(hibernateProperties());
+
         return factory;
     }
 

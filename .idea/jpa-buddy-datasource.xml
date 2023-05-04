@@ -2,8 +2,7 @@
 <project version="4">
   <component name="JpbDataSourceConfig">
     <data-sources>
-      <data-source id="8969a215-485d-4aa7-902f-9ae5c1f33ba9" name="doan" url="jdbc:mysql://localhost/doan?useSSL=false&amp;allowMultiQueries=true&amp;serverTimezone=UTC" driverClass="com.mysql.cj.jdbc.Driver" />
-      <data-source id="83c47c62-88cb-4d68-99d0-6d640469af20" name="btl" url="jdbc:mysql://localhost/btl?useSSL=false&amp;allowMultiQueries=true&amp;serverTimezone=UTC" driverClass="com.mysql.cj.jdbc.Driver" />
+      <data-source id="c4c8bb37-4bed-4373-95a1-81a42abed25a" name="btl" url="jdbc:mysql://localhost/btl?useSSL=false&amp;allowMultiQueries=true&amp;serverTimezone=UTC" driverClass="com.mysql.cj.jdbc.Driver" />
     </data-sources>
   </component>
 </project>

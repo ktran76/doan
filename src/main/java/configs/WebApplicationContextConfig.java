@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ResourceBundleMessageSource;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.format.FormatterRegistry;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.validation.Validator;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
@@ -17,6 +17,10 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
+import validator.WebAppValidator;
+
+import java.util.HashSet;
+import java.util.Set;
 
 
 @Configuration
@@ -32,8 +36,8 @@ import org.springframework.web.servlet.view.JstlView;
 })
 public class WebApplicationContextConfig implements WebMvcConfigurer {
     @Override
-    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configure) {
-        configure.enable();
+    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+        configurer.enable();
     }
 
     @Bean
@@ -58,6 +62,11 @@ public class WebApplicationContextConfig implements WebMvcConfigurer {
     @Override
     public Validator getValidator() {
         return validator();
+    }
+
+    @Override
+    public void addFormatters(FormatterRegistry registry) {
+
     }
 
     @Bean

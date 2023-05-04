@@ -1,19 +1,29 @@
 package controllers;
 
-import lombok.extern.slf4j.Slf4j;
+import entity.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import java.io.IOException;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
+import services.UserService;
+
+import java.util.List;
+import java.util.Map;
 
 
-@Slf4j
 @Controller
 public class HomeController {
 
-
+    @Autowired
+    UserService userService;
 
     @RequestMapping("/")
-    public String hello() throws IOException {
-        return "index";
+    public ModelAndView home() {
+        List<User> listUser = userService.listAll();
+        ModelAndView mav = new ModelAndView("index");
+        mav.addObject("listUser", listUser);
+        return mav;
     }
+
+
 }
