@@ -31,6 +31,7 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public void add(User user) {
+        user.setConfirm(user.getPassword());
         Session session = Objects.requireNonNull(factoryBean.getObject()).getCurrentSession();
         user.setCreatedDate(LocalDateTime.now());
         session.save(user);
@@ -56,7 +57,7 @@ public class UserRepositoryImpl implements UserRepository {
         CriteriaQuery<User> q = b.createQuery(User.class);
         Root root = q.from(User.class);
         q.select(root);
-        q.where(b.equal(root.get("userName"), name));
+        q.where(b.equal(root.get("username"), name));
         Query query = session.createQuery(q);
         return (User) query.getSingleResult();
     }
@@ -64,7 +65,7 @@ public class UserRepositoryImpl implements UserRepository {
     @Override
     public void update(User user) {
         Session session = Objects.requireNonNull(factoryBean.getObject()).getCurrentSession();
-        this.add(user);
         session.delete(user);
+        this.add(user);
     }
 }

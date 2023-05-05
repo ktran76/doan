@@ -15,12 +15,13 @@
         <input type="text" name="keyword" />
         <input type="submit" value="Search" />
     </form>
-    <h3><a href="/quanlykhoaluan/new">New User</a></h3>
+    <h3><a href="/quanlykhoaluan/register">New User</a></h3>
     <table border="1" cell-padding="5">
         <tr>
             <th>UserId</th>
-            <th>UserName</th>
-            <th>UserPassword</th>
+            <th>Full Name</th>
+            <th>Username</th>
+            <th>Password</th>
             <th>E-mail</th>
             <th>Address</th>
             <th>User-role</th>
@@ -30,14 +31,15 @@
         <c:forEach items="${listUser}" var="user">
         <tr>
             <td>${user.userId}</td>
-            <td>${user.userName}</td>
-            <td>${user.userPassword}</td>
+            <td>${user.fullname}</td>
+            <td>${user.username}</td>
+            <td>${user.password}</td>
             <td>${user.email}</td>
             <td>${user.phoneNumber}</td>
             <td>${user.role}</td>
             <td>${user.createdDate}</td>
             <td>
-                <a href="/quanlykhoaluan/edit?id=${user.id}">Edit</a>
+                <a href="/quanlykhoaluan/update?id=${user.id}">Update</a>
                 <a href="/quanlykhoaluan/delete?id=${user.id}">Delete</a>
             </td>
         </tr>

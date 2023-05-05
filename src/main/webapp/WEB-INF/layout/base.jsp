@@ -41,8 +41,10 @@
                 referrerpolicy="no-referrer"></script>
 
         <link rel="stylesheet" href="<c:url value="/css/base.css" />">
+        <link rel="stylesheet" href="<c:url value="/css/header.css" />">
         <link rel="stylesheet" href="<c:url value="/css/main.css" />">
-        <link rel="stylesheet" href="<c:url value="/css/login.css" />" />
+        <link rel="stylesheet" href="<c:url value="/css/login.css" />" /
+        <link rel="stylesheet" href="<c:url value="/css/footer.css" />">
     </head>
     <body>
         <tiles:insertAttribute name="header"/>
@@ -50,6 +52,7 @@
         <div id="main">
             <tiles:insertAttribute name="auth" />
         </div>
+
         <tiles:insertAttribute name="footer" />
         <script src="<c:url value="/js/script.js"/>"></script>
         <script src="<c:url value="/js/login-register.js" />"></script>

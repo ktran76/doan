@@ -1,83 +1,91 @@
-<%--
-    Document   : register
-    Created on : Sep 24, 2021, 9:10:49 PM
-    Author     : CaoNgocCuong
---%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <c:url value="/register" var="action" />
-
-
-<div class="book-tour-wrap">
-    <div class="container book-tour">
-        <div class="row">
-            <div class="col col-lg-5">
-                <div class="book-tour__contact">
-                    <div class="book-tour__title">
-                        <h3>Cùng trải nghiệm với chúng tôi trong những hành trình tuyệt vời nhất ❤️</h3>
-                    </div>
-                    <div class="book-tour__type">
-                        <h2>Đăng ký thành viên</h2>
-                    </div>
-                    <ul class="book-tour__list">
-                        <li>
-                            <a href="mailto:minhkhoi.tran30@gmail.com"><i class="fas fa-envelope"></i>minhkhoi.tran30@gmail.com</a>
-                        </li>
-                        <li>
-                            <a href="tel:+0966552906"><i class="fas fa-phone-square-alt"></i>0966552906</a>
-                        </li>
-                    </ul>
-                    <div class="book-tour__img">
-                        <img src="<c:url value="/img/booktour-bg.jpg"/>" alt="book-tour">
-                    </div>
+    <div class="main">
+        <div class="contact">
+            <div class="">
+                <div class="">
+                    <h2>Đăng ký thành viên</h2>
                 </div>
-            </div>
-            <div class="col col-lg-7">
-                <div class="book-tour__content auth__content">
-                    <div class="tour-required">
-                        <p>Dấu <span class="book-required">*</span> là thông tin bắt buộc</p>
-                    </div>
-                    <c:if test="${errMsg != null}">
-                        <div class="form-group">
-                            <span class="form-message-login">Đăng ký không thành công ${errMsg}</span>
-                        </div>
-                    </c:if>
-                    <form:form action="save" method="post" modelAttribute="user">
-                        <table border="0" cellpadding="5">
-                            <tr>
-                                <td>UserId: </td>
-                                <td><form:input path="userId" /></td>
-                            </tr>
-                            <tr>
-                                <td>UserName: </td>
-                                <td><form:input path="userName" /></td>
-                            </tr>
-                            <tr>
-                                <td>UserPassword: </td>
-                                <td><form:input path="userPassword" /></td>
-                            </tr>
-                            <tr>
-                                 <td>Email: </td>
-                                 <td><form:input path="email" /></td>
-                            </tr>
-                            <tr>
-                                 <td>PhoneNumber: </td>
-                                 <td><form:input path="phoneNumber" /></td>
-                            </tr>
-                            <tr>
-                                 <td>User-role: </td>
-                                 <td><form:input path="role" /></td>
-                            </tr>
-                            <tr>
-                                <td colspan="3" cell-padding="2"><input type="submit" value="Save"></td>
-                            </tr>
-                        </table>
-                    </form:form>
-                </div>
+                <ul class="">
+                    <li>
+                        <a href="mailto:minhkhoi.tran30@gmail.com"><i class="fas fa-envelope"></i>minhkhoi.tran30@gmail.com</a>
+                    </li>
+                    <li>
+                        <a href="tel:+0966552906"><i class="fas fa-phone-square-alt"></i>0966552906</a>
+                    </li>
+                </ul>
             </div>
         </div>
+        
+        <div class="form_register">
+            <div class="">
+                <p>Dấu <span class="">*</span> là thông tin bắt buộc</p>
+            </div>
+            <form:form method="POST" action="${action}" modelAttribute="user" class="form" id="form-2" enctype="multipart/form-data">
+                <c:if test="${errMsg != null}">
+                    <div class="form-group">
+                        <span cssClass="alert alert-danger">Tạo tài khoản không thành công!</span>
+                    </div>
+                </c:if>
+
+                <form:errors path="fullname" cssClass="alert alert-danger" element="div"/>
+                <div class="form-group">
+                  <label for="fullname" class="form-label">Họ và tên</label>
+                  <input id="fullname" name="fullname" path="fullname" type="text" placeholder="Hãy nhập họ và tên" class="form-control">
+                  <span class="form-message"></span>
+                </div>
+
+                <form:errors path="username" cssClass="alert alert-danger" element="div"/>
+                <div class="form-group">
+                  <label for="username" class="form-label">Tài khoản</label>
+                  <input id="username" name="username" path="username" type="text" placeholder="VD: minhkhoi123" class="form-control">
+                  <span class="form-message"></span>
+                </div>
+
+                <form:errors path="password" cssClass="alert alert-danger" element="div"/>
+                <div class="form-group">
+                  <label for="password" class="form-label">Mật khẩu</label>
+                  <input id="password" name="password" path="password"  type="password" placeholder="Nhập mật khẩu" class="form-control">
+                  <span class="form-message"></span>
+                </div>
+
+                <form:errors path="confirm" cssClass="alert alert-danger" element="div"/>
+                <div cssClass="alert alert-danger">${errMsg}</div>
+                <div class="form-group">
+                  <label for="confirm" class="form-label">Nhập lại mật khẩu</label>
+                  <input id="confirm" name="confirm" path="confirm" type="password" placeholder="Nhập lại mật khẩu" class="form-control">
+                  <span class="form-message"></span>
+                </div>
+                
+                <form:errors path="email" cssClass="alert alert-danger" element="div"/> 
+                <div class="form-group">
+                  <label for="email" class="form-label">Email</label>
+                  <input id="email" name="email" path="email"  type="email" placeholder="Nhập Email" class="form-control">
+                  <span class="form-message"></span>
+                </div>
+
+                <form:errors path="phoneNumber" cssClass="alert alert-danger" element="div"/>
+                <div class="form-group">
+                  <label for="phoneNumber" class="form-label">Số điện thoại</label>
+                  <input id="phoneNumber" name="phoneNumber" path="text"  type="phoneNumber" placeholder="Nhập số điện thoại" class="form-control">
+                  <span class="form-message"></span>
+                </div>
+
+                <form:errors path="avatar" cssClass="alert alert-danger" element="div"/>
+                <div class="form-group">
+                  <label for="avatar" class="form-label">avatar</label>
+                  <input id="avatar" name="avatar" path="avatar"  type="text" placeholder="avatar" class="form-control">
+                  <span class="form-message"></span>
+                </div>
+    
+                <div class="form-group">
+                    <input type="submit" value="Đăng Ký" class="btn btn-danger"/>
+                </div>
+            </form:form>
+        </div>
+        
     </div>
-</div>

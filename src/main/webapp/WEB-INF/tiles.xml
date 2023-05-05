@@ -12,6 +12,12 @@
         <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp"/>
     </definition>
 
+    <definition name="adminBase" template="/WEB-INF/layout/admin_base.jsp">
+        <put-attribute name="title" value="ADMIN"/>
+        <put-attribute name="header" value="/WEB-INF/layout/admin_header.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/layout/admin_footer.jsp"/>
+    </definition>
+
     <!-- ===================== Layout client ========================= -->
 
     <definition name="login" extends="baseLayout">
@@ -22,6 +28,13 @@
     <definition name="register" extends="baseLayout">
         <put-attribute name="title" value="Đăng ký"/>
         <put-attribute name="auth" value="/WEB-INF/views/register.jsp"/>
+    </definition>
+
+    <!-- ===================== Layout admin ========================= -->
+
+    <definition name="admin" extends="adminBase">
+        <put-attribute name="title" value="ADMIN"/>
+        <put-attribute name="adminpage" value="/WEB-INF/views/admin.jsp"/>
     </definition>
 
 </tiles-definitions>
