@@ -10,14 +10,9 @@
         <put-attribute name="title" value="Demo"/>
         <put-attribute name="auth" value=""/>
         <put-attribute name="register" value=""/>
-        <put-attribute name="reset-password" value=""/>
         <put-attribute name="index" value=""/>
-        <put-attribute name="header" value="/WEB-INF/layout/header.jsp"/>
-        <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp"/>
-    </definition>
-
-    <definition name="sinhvienBase" template="/WEB-INF/layout/sinhvienBase.jsp">
-        <put-attribute name="title" value="Demo"/>
+        <put-attribute name="reset-password" value=""/>
+        <put-attribute name="sinhvien" value=""/>
         <put-attribute name="header" value="/WEB-INF/layout/header.jsp"/>
         <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp"/>
     </definition>
@@ -27,6 +22,8 @@
         <put-attribute name="header" value="/WEB-INF/layout/admin_header.jsp"/>
         <put-attribute name="footer" value="/WEB-INF/layout/admin_footer.jsp"/>
     </definition>
+
+    <!-- ===================== Layout auth ========================= -->
 
     <definition name="login" extends="baseLayout">
         <put-attribute name="title" value="Đăng nhập"/>
@@ -43,25 +40,37 @@
         <put-attribute name="reset-password" value="/WEB-INF/views/reset-password.jsp"/>
     </definition>
 
+    <!-- ===================== Layout index ========================= -->
+
     <definition name="index" extends="baseLayout">
         <put-attribute name="title" value="Báo cáo khoá luận"/>
         <put-attribute name="index" value="/WEB-INF/views/index.jsp"/>
     </definition>
+
+    <!-- ===================== Layout sinh vien ========================= -->
 
     <definition name="sinhvien" extends="baseLayout">
         <put-attribute name="title" value="Báo cáo khoá luận"/>
         <put-attribute name="sinhvien" value="/WEB-INF/views/sinhvien.jsp"/>
     </definition>
 
-    <definition name="sinhvien-inf" extends="sinhvien">
+    <definition name="submit-khoaluan" extends="baseLayout">
         <put-attribute name="title" value="Báo cáo khoá luận"/>
-        <put-attribute name="sinhvien-inf" value="/WEB-INF/views/sinhvien-inf.jsp"/>
+        <put-attribute name="sinhvien" value="/WEB-INF/views/submit-khoaluan.jsp"/>
     </definition>
 
-    <definition name="submit" extends="baseLayout">
+    <definition name="sinhvien-inf" extends="baseLayout">
         <put-attribute name="title" value="Báo cáo khoá luận"/>
-        <put-attribute name="submit" value="/WEB-INF/views/submit-khoaluan.jsp"/>
+        <put-attribute name="sinhvien" value="/WEB-INF/views/sinhvien-inf.jsp"/>
     </definition>
+
+    <definition name="khoaluan" extends="baseLayout">
+        <put-attribute name="title" value="Báo cáo khoá luận"/>
+        <put-attribute name="sinhvien" value="/WEB-INF/views/khoaluan.jsp"/>
+    </definition>
+
+    <!-- ===================== Layout sinh vien ========================= -->
+
 
     <definition name="admin" extends="adminBase">
         <put-attribute name="title" value="ADMIN"/>

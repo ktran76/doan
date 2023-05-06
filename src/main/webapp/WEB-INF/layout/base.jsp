@@ -44,16 +44,26 @@
         <tiles:insertAttribute name="header"/>
 
         <div id="main" class="py-5">
+            <!-- ===================== Layout auth ========================= -->
+
             <tiles:insertAttribute name="auth"/>
+
             <tiles:insertAttribute name="register"/>
+
             <tiles:insertAttribute name="reset-password"/>
-            <tiles:insertAttribute name="index"/>
+
+
+            <!-- ===================== Layout auth ========================= -->
+
+
+            <tiles:insertAttribute name="index" />
+
             <tiles:insertAttribute name="sinhvien"/>
-            <tiles:insertAttribute name="sinhvien-inf"/>
-            <tiles:insertAttribute name="submit"/>
+
         </div>
 
         <tiles:insertAttribute name="footer" />
+
         <script src="<c:url value="/js/script.js"/>"></script>
         <script src="<c:url value="/js/login-register.js" />"></script>
    </body>
