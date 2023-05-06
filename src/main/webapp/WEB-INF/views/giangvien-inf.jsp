@@ -5,14 +5,14 @@
 <c:url value="/register" var="action" />
 <div class="container">
     <div class="d-flex back-icon">
-        <a href="/sinhvien">
+        <a href="/giangvien">
             <i class="fa-solid fa-arrow-left back-icon"></i>
         </a>
     </div>
     <div class="col col-6 p-5 bg-white mx-auto"
         style="border-radius: 28px !important; border: 2px solid blue !important">
         <div class="form_register">
-            <h2>Thông tin sinh viên</h2>
+            <h2>Thông tin giảng viên </h2>
             <form:form method="POST" action="${action}" modelAttribute="user" class="form" id="form-2"
                 enctype="multipart/form-data">
                 <c:if test="${errMsg != null}">

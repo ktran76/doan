@@ -53,12 +53,15 @@
             <tiles:insertAttribute name="reset-password"/>
 
 
-            <!-- ===================== Layout auth ========================= -->
+            <!-- ===================== Layout main ========================= -->
 
 
             <tiles:insertAttribute name="index" />
 
             <tiles:insertAttribute name="sinhvien"/>
+
+            <tiles:insertAttribute name="giangvien"/>
+
 
         </div>
 
