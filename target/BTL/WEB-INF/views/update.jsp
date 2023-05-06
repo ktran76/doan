@@ -11,7 +11,7 @@
 <body>
     <div align="center">
         <h2>Update User</h2>
-        <form:form action="save" method="post" modelAttribute="user">
+        <form:form action="update" method="post" modelAttribute="user">
             <table border="0" cellpadding="5">
                 <tr>
                     <td>ID: </td>
@@ -24,13 +24,21 @@
                     <td><form:input path="userId" /></td>
                 </tr>
                 <tr>
-                    <td>UserName: </td>
-                    <td><form:input path="userName" /></td>
+                    <td>Full Name: </td>
+                    <td><form:input path="fullname" /></td>
                 </tr>
                 <tr>
-                    <td>UserPassword: </td>
-                    <td><form:input path="userPassword" /></td>
+                    <td>UserName: </td>
+                    <td><form:input path="username" /></td>
                 </tr>
+                <tr>
+                    <td>Password: </td>
+                    <td><form:input path="password" /></td>
+                </tr>
+                <tr>
+                    <td>Confirm Password: </td>
+                    <td><form:input path="confirm" /></td>
+               </tr>
                 <tr>
                      <td>Email: </td>
                      <td><form:input path="email" /></td>
@@ -40,11 +48,15 @@
                      <td><form:input path="phoneNumber" /></td>
                 </tr>
                 <tr>
+                    <td>Avatar: </td>
+                    <td><form:input path="avatar" /></td>
+               </tr>
+                <tr>
                      <td>User-role: </td>
                      <td><form:input path="role" /></td>
                 </tr>
                 <tr>
-                    <td colspan="2"><input type="submit" value="Save"></td>
+                    <td colspan="2"><input type="submit" value="update"></td>
                 </tr>
             </table>
         </form:form>

@@ -1,0 +1,80 @@
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+    <!-- ===================== Layout base ========================= -->
+
+    <definition name="baseLayout" template="/WEB-INF/layout/base.jsp">
+        <put-attribute name="title" value="Demo"/>
+        <put-attribute name="header" value="/WEB-INF/layout/header.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp"/>
+    </definition>
+
+    <definition name="adminBase" template="/WEB-INF/layout/admin_base.jsp">
+        <put-attribute name="title" value="ADMIN"/>
+        <put-attribute name="header" value="/WEB-INF/layout/admin_header.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/layout/admin_footer.jsp"/>
+    </definition>
+
+    <!-- ===================== Layout client ========================= -->
+
+    <definition name="login" extends="baseLayout">
+        <put-attribute name="title" value="Đăng nhập"/>
+        <put-attribute name="auth" value="/WEB-INF/views/login.jsp"/>
+    </definition>
+
+    <definition name="register" extends="baseLayout">
+        <put-attribute name="title" value="Đăng ký"/>
+        <put-attribute name="register" value="/WEB-INF/views/register.jsp"/>
+    </definition>
+
+    <definition name="reset-password" extends="baseLayout">
+        <put-attribute name="title" value="Reset Password"/>
+        <put-attribute name="reset-password" value="/WEB-INF/views/reset-password.jsp"/>
+    </definition>
+
+    <!-- ===================== Layout index ========================= -->
+
+    <definition name="index" extends="baseLayout">
+        <put-attribute name="title" value="Báo cáo khoá luận"/>
+        <put-attribute name="index" value="/WEB-INF/views/index.jsp"/>
+    </definition>
+
+    <!-- ===================== Layout sinh vien ========================= -->
+
+    <definition name="sinhvien" extends="baseLayout">
+        <put-attribute name="title" value="Báo cáo khoá luận"/>
+        <put-attribute name="sinhvien" value="/WEB-INF/views/sinhvien.jsp"/>
+    </definition>
+
+    <definition name="submit" extends="baseLayout">
+        <put-attribute name="title" value="Báo cáo khoá luận"/>
+        <put-attribute name="submit" value="/WEB-INF/views/submit-khoaluan.jsp"/>
+    </definition>
+
+    <definition name="sinhvien-info" extends="baseLayout">
+        <put-attribute name="title" value="Báo cáo khoá luận"/>
+        <put-attribute name="sinhvien-info" value="/WEB-INF/views/sinhvien-inf.jsp"/>
+    </definition>
+
+    <definition name="khoaluan-info" extends="baseLayout">
+        <put-attribute name="title" value="Báo cáo khoá luận"/>
+        <put-attribute name="khoaluan-info" value="/WEB-INF/views/khoaluan.jsp"/>
+    </definition>
+    <!-- ===================== Layout giang vien ========================= -->
+
+    <definition name="giangvien" extends="baseLayout">
+        <put-attribute name="title" value="Báo cáo khoá luận"/>
+        <put-attribute name="auth" value="/WEB-INF/views/giangvien.jsp"/>
+    </definition>
+
+    <!-- ===================== Layout admin ========================= -->
+
+    <definition name="admin" extends="adminBase">
+        <put-attribute name="title" value="ADMIN"/>
+        <put-attribute name="adminpage" value="/WEB-INF/views/admin.jsp"/>
+    </definition>
+
+</tiles-definitions>

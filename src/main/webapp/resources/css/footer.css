@@ -1,11 +1,18 @@
-.mainfooter {
-    background-color: cadetblue;
+.main-footer {
+  background: linear-gradient(172deg, #237fff, #0930ff);
+  padding: 12px 0;
 }
 
-.footer-top {
-    
+li {
+  list-style-type: none;
 }
 
-.footer-copyright {
-    text-align: center;
+.form-btn {
+  background: linear-gradient(172deg, #237fff, #0930ff);
+}
+
+.divinder {
+  width: 100%;
+  height: 1px;
+  background-color: white;
 }

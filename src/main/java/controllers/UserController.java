@@ -28,6 +28,11 @@ public class UserController {
         return "login";
     }
 
+    @GetMapping("/reset-password")
+    public String reset() {
+        return "reset-password";
+    }
+
     @GetMapping("/register")
     public String register(Model model) {
         model.addAttribute("user", new User());

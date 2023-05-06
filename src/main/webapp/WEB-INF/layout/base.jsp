@@ -1,9 +1,3 @@
-<%--
-    Document   : base
-    Created on : Aug 7, 2021, 9:03:29 PM
-    Author     : CaoNgocCuong
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
@@ -43,14 +37,20 @@
         <link rel="stylesheet" href="<c:url value="/css/base.css" />">
         <link rel="stylesheet" href="<c:url value="/css/header.css" />">
         <link rel="stylesheet" href="<c:url value="/css/main.css" />">
-        <link rel="stylesheet" href="<c:url value="/css/login.css" />" /
+        <link rel="stylesheet" href="<c:url value="/css/login.css" />" >
         <link rel="stylesheet" href="<c:url value="/css/footer.css" />">
     </head>
-    <body>
+    <body class="main-body-page">
         <tiles:insertAttribute name="header"/>
 
-        <div id="main">
-            <tiles:insertAttribute name="auth" />
+        <div id="main" class="py-5">
+            <tiles:insertAttribute name="auth"/>
+            <tiles:insertAttribute name="register"/>
+            <tiles:insertAttribute name="reset-password"/>
+            <tiles:insertAttribute name="index"/>
+            <tiles:insertAttribute name="sinhvien"/>
+            <tiles:insertAttribute name="sinhvien-inf"/>
+            <tiles:insertAttribute name="submit"/>
         </div>
 
         <tiles:insertAttribute name="footer" />

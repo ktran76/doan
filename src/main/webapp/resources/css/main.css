@@ -1,0 +1,21 @@
+.main-body-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #edf0f2;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+.email-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: black;
+}
+
+input #file-upload-button {
+  margin: 0 !important;
+}

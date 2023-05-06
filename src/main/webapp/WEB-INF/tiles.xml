@@ -8,6 +8,16 @@
 
     <definition name="baseLayout" template="/WEB-INF/layout/base.jsp">
         <put-attribute name="title" value="Demo"/>
+        <put-attribute name="auth" value=""/>
+        <put-attribute name="register" value=""/>
+        <put-attribute name="reset-password" value=""/>
+        <put-attribute name="index" value=""/>
+        <put-attribute name="header" value="/WEB-INF/layout/header.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp"/>
+    </definition>
+
+    <definition name="sinhvienBase" template="/WEB-INF/layout/sinhvienBase.jsp">
+        <put-attribute name="title" value="Demo"/>
         <put-attribute name="header" value="/WEB-INF/layout/header.jsp"/>
         <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp"/>
     </definition>
@@ -18,8 +28,6 @@
         <put-attribute name="footer" value="/WEB-INF/layout/admin_footer.jsp"/>
     </definition>
 
-    <!-- ===================== Layout client ========================= -->
-
     <definition name="login" extends="baseLayout">
         <put-attribute name="title" value="Đăng nhập"/>
         <put-attribute name="auth" value="/WEB-INF/views/login.jsp"/>
@@ -27,18 +35,33 @@
 
     <definition name="register" extends="baseLayout">
         <put-attribute name="title" value="Đăng ký"/>
-        <put-attribute name="auth" value="/WEB-INF/views/register.jsp"/>
+        <put-attribute name="register" value="/WEB-INF/views/register.jsp"/>
     </definition>
 
-    <!-- ===================== Layout index ========================= -->
+    <definition name="reset-password" extends="baseLayout">
+        <put-attribute name="title" value="Reset Password"/>
+        <put-attribute name="reset-password" value="/WEB-INF/views/reset-password.jsp"/>
+    </definition>
 
     <definition name="index" extends="baseLayout">
         <put-attribute name="title" value="Báo cáo khoá luận"/>
-        <put-attribute name="auth" value="/WEB-INF/views/index.jsp"/>
+        <put-attribute name="index" value="/WEB-INF/views/index.jsp"/>
     </definition>
 
+    <definition name="sinhvien" extends="baseLayout">
+        <put-attribute name="title" value="Báo cáo khoá luận"/>
+        <put-attribute name="sinhvien" value="/WEB-INF/views/sinhvien.jsp"/>
+    </definition>
 
-    <!-- ===================== Layout admin ========================= -->
+    <definition name="sinhvien-inf" extends="sinhvien">
+        <put-attribute name="title" value="Báo cáo khoá luận"/>
+        <put-attribute name="sinhvien-inf" value="/WEB-INF/views/sinhvien-inf.jsp"/>
+    </definition>
+
+    <definition name="submit" extends="baseLayout">
+        <put-attribute name="title" value="Báo cáo khoá luận"/>
+        <put-attribute name="submit" value="/WEB-INF/views/submit-khoaluan.jsp"/>
+    </definition>
 
     <definition name="admin" extends="adminBase">
         <put-attribute name="title" value="ADMIN"/>
