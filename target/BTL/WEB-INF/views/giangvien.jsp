@@ -3,7 +3,7 @@
 
 <c:url value="/login" var="action" />
 <div class="container fluid">
-    <p class="mb-3 text-title-sv">TIện ích sinh viên</p>
+    <p class="mb-3 text-title-sv">TIện ích giảng viên</p>
     <div class="row w-100 ml-0 justify-content-center">
         <div class="col col-4">
             <a class="text-decoration-none" href="/giangvien/submit">
@@ -34,7 +34,7 @@
                     <div class="img-home mr-3">
                         <img src="https://ou.edu.vn/wp-content/uploads/2016/10/Tham-tra-bang.gif" alt="">
                     </div>
-                    <h5 class="mb-0">Thông tin khóa luận</h5>
+                    <h5 class="mb-0">Thông tin hội đồng</h5>
                 </div>
             </a>
         </div>

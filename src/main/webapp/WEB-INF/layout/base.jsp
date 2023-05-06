@@ -62,6 +62,9 @@
 
             <tiles:insertAttribute name="giangvien"/>
 
+            <tiles:insertAttribute name="admin"/>
+
+
 
         </div>
 
