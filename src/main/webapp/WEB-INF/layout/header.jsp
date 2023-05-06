@@ -7,7 +7,7 @@
     <ul class="flex-container">
         <div><a href="#" ><img src="<c:url value="/img/Logo.png" />" alt="OU"></a></div>
         <div>
-            <a href="/quanlykhoaluan/logout"><i class="fa-solid fa-right-from-bracket"></i></a>
+            <a href="/logout"><i class="fa-solid fa-right-from-bracket"></i></a>
         </div>
     </ul>
     

@@ -13,6 +13,5 @@ public interface KhoaLuanService {
     void update(Khoaluan khoaluan);
     void delete(int id);
     void addDetail(Khoaluan khoaluan, List<User> users);
-    void updateDetail();
-    void deleteDetail();
+    void updateDetail(Khoaluan khoaluan, List<User> users);
 }

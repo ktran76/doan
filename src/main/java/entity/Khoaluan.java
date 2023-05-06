@@ -15,6 +15,11 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@NamedQueries({
+        @NamedQuery(name = "Khoaluan.findAll", query = "SELECT khoaluan FROM Khoaluan khoaluan"),
+        @NamedQuery(name = "Khoaluan.findById", query = "SELECT khoaluan FROM Khoaluan khoaluan WHERE khoaluan.id = :id"),
+        @NamedQuery(name = "Khoaluan.findByKhoaLuanId", query = "SELECT khoaluan FROM Khoaluan khoaluan WHERE khoaluan.khoaLuanId = :khoaLuanId"),
+})
 @Table(name = "khoaluan")
 public class Khoaluan implements Serializable {
     @Id

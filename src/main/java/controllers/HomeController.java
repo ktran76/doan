@@ -17,13 +17,24 @@ public class HomeController {
     @Autowired
     UserService userService;
 
-    @RequestMapping("/")
-    public ModelAndView home() {
-        List<User> listUser = userService.listAll();
-        ModelAndView mav = new ModelAndView("index");
-        mav.addObject("listUser", listUser);
-        return mav;
+    @GetMapping("/")
+    public String home() {
+        return "index";
     }
 
+    @GetMapping("/sinhvien")
+    public String sinhvien() {
+        return "sinhvien";
+    }
+
+    @GetMapping("/giangvien")
+    public String giangvien() {
+        return "giangvien";
+    }
+
+    @GetMapping("/admin")
+    public String admin() {
+        return "admin";
+    }
 
 }

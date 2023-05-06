@@ -14,6 +14,7 @@ import services.UserService;
 import javax.validation.Valid;
 import java.security.PublicKey;
 import java.util.Map;
+import java.util.Objects;
 
 @Controller
 @ControllerAdvice
@@ -59,39 +60,40 @@ public class UserController {
         return "update";
     }
 
-    @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public String addUser(Model model, @ModelAttribute(value="user") @Valid User user, BindingResult result) {
-        String errMsg ="";
-        if(!result.hasErrors()){
-            user.setRole(User.ROLE_SV);
-            userService.add(user);
-            sendMail("doanquanlykhoaluan@gmail.com", user.getEmail(), "Dang ky tai khoan", "Ban da dang ky de nop khoa luan thanh cong"
-                    + " voi ten dang nhap la: " + user.getUsername());
-            return "redirect:/";
-        }
-        else {
-            errMsg = "Đã có lỗi xảy ra không thêm được người dùng!";
-            return "register";
-        }
-    }
-
     @RequestMapping(value = "/update", method = RequestMethod.POST)
-    public String updateUser(Model model, @ModelAttribute(value="user") @Valid User user, BindingResult result) {
+    public String updateUser(Model model, @ModelAttribute(value="user") User user) {
         String errMsg ="";
-        if(!result.hasErrors()){
-            userService.update(user);
-            return "redirect:/";
+        User update = userService.findById(user.getId());
+        if (Objects.isNull(user.getConfirm())) {
+            errMsg = "Nhap lai mat khau!";
+            return "/update";
+        }
+        update.setUsername(user.getUsername());
+        if (!user.getPassword().equals(update.getPassword())) {
+            update.setPassword(user.getPassword());
+            update.setConfirm(user.getConfirm());
         }
         else
-            errMsg = "Đã có lỗi xảy ra không thể cập nhật thông tin người dùng!";
+            update.setConfirm(user.getPassword());
+        update.setAvatar(user.getAvatar());
+        update.setEmail(user.getEmail());
+        update.setPhoneNumber(user.getPhoneNumber());
+        update.setFullname(user.getFullname());
+
+        if (update.getPassword().equals(update.getConfirm())) {
+            userService.update(update);
+        }
+        else
+            errMsg = "Nhap mat khau khong dung!";
         model.addAttribute("errMsg", errMsg);
-        return "redirect:/";
+        return "/update";
     }
 
-    @RequestMapping("/delete")
-    public String deleteCustomerForm(@RequestParam int id) {
-        userService.delete(id);
-        return "redirect:/";
+    @GetMapping("/sinhvien/inf")
+    public String sinhvieninf(Model model, @RequestParam int id) {
+        User user = userService.findById(id);
+        model.addAttribute("user", user);
+        return "inf";
     }
 
     public void sendMail(String from, String to, String subject, String content){

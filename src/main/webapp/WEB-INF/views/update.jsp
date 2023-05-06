@@ -32,9 +32,13 @@
                     <td><form:input path="username" /></td>
                 </tr>
                 <tr>
-                    <td>UserPassword: </td>
+                    <td>Password: </td>
                     <td><form:input path="password" /></td>
                 </tr>
+                <tr>
+                    <td>Confirm Password: </td>
+                    <td><form:input path="confirm" /></td>
+               </tr>
                 <tr>
                      <td>Email: </td>
                      <td><form:input path="email" /></td>
@@ -43,6 +47,10 @@
                      <td>PhoneNumber: </td>
                      <td><form:input path="phoneNumber" /></td>
                 </tr>
+                <tr>
+                    <td>Avatar: </td>
+                    <td><form:input path="avatar" /></td>
+               </tr>
                 <tr>
                      <td>User-role: </td>
                      <td><form:input path="role" /></td>

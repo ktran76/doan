@@ -30,19 +30,20 @@ public class KhoaLuanController {
     UserService userService;
 //    add Khoa Luan
     @GetMapping("/khoaluan")
-    public String add(){
-        Khoaluan khoaluan = new Khoaluan(3, "KL03", "Lap trinh huong doi tuong", LocalDateTime.now(), "abcd");
-        List<User> users = userService.listAll();
+    public String add(Khoaluan khoaluan, List<User> users){
         khoaLuanService.add(khoaluan);
         khoaLuanService.addDetail(khoaluan , users);
         return "khoaluan";
     }
 //    update KhoaLuan
-    public String update(){
+    public String update(Khoaluan khoaluan, List<User> users){
+        khoaLuanService.update(khoaluan);
+        khoaLuanService.updateDetail(khoaluan , users);
         return "sinhvien_updatekhoaluan";
     }
 //    delete KhoaLuan
-    public String delete(){
+    public String delete(int id){
+        khoaLuanService.delete(id);
         return "sinhvien_deletekhoaluan";
     }
 //    retrieve all

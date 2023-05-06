@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.checkerframework.common.aliasing.qual.Unique;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -54,12 +55,6 @@ public class User implements Serializable {
     @Column(name = "password", nullable = false, length = 100)
     private String password;
 
-    @Size(max = 100)
-    @NotBlank(message = "Ban chua nhap lai mat khau!")
-    @NotNull
-    @Column(name = "confirm", nullable = false, length = 100)
-    private String confirm;
-
     @Size(max = 45)
     @NotBlank(message = "Email khong hop le!")
     @Column(name = "email", length = 45)
@@ -91,4 +86,10 @@ public class User implements Serializable {
     @Column(name = "active", nullable = false)
     private Boolean active = false;
 
+    @Transient
+    @NotBlank(message = "Nhap lai mat khau!")
+    private String confirm;
+
+    @Transient
+    private MultipartFile file;
 }

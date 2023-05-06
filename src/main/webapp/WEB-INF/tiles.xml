@@ -30,6 +30,14 @@
         <put-attribute name="auth" value="/WEB-INF/views/register.jsp"/>
     </definition>
 
+    <!-- ===================== Layout index ========================= -->
+
+    <definition name="index" extends="baseLayout">
+        <put-attribute name="title" value="Báo cáo khoá luận"/>
+        <put-attribute name="auth" value="/WEB-INF/views/index.jsp"/>
+    </definition>
+
+
     <!-- ===================== Layout admin ========================= -->
 
     <definition name="admin" extends="adminBase">

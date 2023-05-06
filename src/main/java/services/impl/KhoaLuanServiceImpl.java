@@ -48,7 +48,7 @@ public class KhoaLuanServiceImpl implements KhoaLuanService {
 
     @Override
     public void delete(int id) {
-
+        khoaLuanRepository.delete(id);
     }
 
     @Override
@@ -63,12 +63,8 @@ public class KhoaLuanServiceImpl implements KhoaLuanService {
     }
 
     @Override
-    public void updateDetail() {
+    public void updateDetail(Khoaluan khoaluan, List<User> users) {
 
     }
 
-    @Override
-    public void deleteDetail() {
-
-    }
 }

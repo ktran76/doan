@@ -2,6 +2,7 @@ package repositories.impl;
 
 import entity.Khoaluan;
 import entity.Khoaluandetail;
+import entity.User;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
@@ -44,8 +45,25 @@ public class KhoaLuanRepositoryImpl implements KhoaLuanRepository {
     }
 
     @Override
-    public void delete(Khoaluan khoaluan) {
+    public void delete(int id) {
+        Session session = factoryBean.getObject().getCurrentSession();
+        Khoaluan khoaluan = findById(id);
+        List<Khoaluandetail> list = findByKhoaLuanId(khoaluan.getKhoaLuanId());
+        for (Khoaluandetail khoaluandetail: list){
+            session.delete(khoaluandetail);
+        }
+        session.delete(khoaluan);
+    }
 
+    private Khoaluan findById(int id) {
+        Session session = factoryBean.getObject().getCurrentSession();
+        return session.get(Khoaluan.class, id);
+    }
+
+    private List<Khoaluandetail> findByKhoaLuanId(String khoaluanid) {
+        Session session = factoryBean.getObject().getCurrentSession();
+        Query q = session.createQuery("SELECT kld FROM Khoaluandetail kld WHERE kld.khoaluan LIKE '"+khoaluanid+"'");
+        return q.getResultList();
     }
 
     @Override
